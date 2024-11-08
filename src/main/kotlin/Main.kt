@@ -10,6 +10,7 @@ suspend fun main() {
     listOf(
         TrueSharing,
         FalseSharing,
+        FalseSharingAtomic,
     ).forEach {
         it.run()
     }

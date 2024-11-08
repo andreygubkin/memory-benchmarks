@@ -7,7 +7,9 @@ object FalseSharing : IDemo {
     override val title = "false sharing"
 
     override suspend fun execute() {
-        val array = buildDemoArray()
+        val array = buildArray(
+            size = 1 shl 28, // 256 mb * Long = 2gb
+        )
 
         var sum = 0L
 
@@ -44,8 +46,8 @@ object FalseSharing : IDemo {
         println("ms")
         repeat(maxThreads) {
             val parallelism = it + 1
-            measureWorkMs(parallelism).also {
-                println(it)
+            measureWorkMs(parallelism).also { ms ->
+                println(ms)
             }
         }
     }

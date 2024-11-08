@@ -18,8 +18,3 @@ internal fun buildArray(
     }
 }
 
-internal fun buildDemoArray(): LongArray {
-    return buildArray(
-        size = 1 shl 28, // 256 mb * Long = 2gb
-    )
-}

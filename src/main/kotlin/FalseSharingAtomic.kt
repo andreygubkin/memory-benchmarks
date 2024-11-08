@@ -1,21 +1,22 @@
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.concurrent.atomic.AtomicLong
 import kotlin.system.measureTimeMillis
 
-object TrueSharing : IDemo {
-
-    override val title = "true sharing"
+object FalseSharingAtomic : IDemo {
+    override val title = "false sharing atomic"
 
     override suspend fun execute() {
         val array = buildArray(
-            size = 1 shl 28, // 256 mb * Long = 2gb
+            size = 1 shl 26, // 64 mb * Long = 512mb
         )
 
+        val sum = AtomicLong()
+
         fun work() {
-            var sum = 0L
             for (i in 0L..array.size) {
-                sum += array[(i % array.size).toInt()]
+                sum.addAndGet(array[(i % array.size).toInt()])
             }
             sum.sendToBlackHole()
         }
