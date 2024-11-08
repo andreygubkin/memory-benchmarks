@@ -46,3 +46,9 @@ internal fun buildMatrix(
         }
     }
 }
+
+internal fun Matrix.transpose(): Matrix {
+    return buildMatrix(size = this.size) { row, column ->
+        this[column][row]
+    }
+}
