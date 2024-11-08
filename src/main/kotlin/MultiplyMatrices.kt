@@ -1,5 +1,6 @@
 import kotlin.system.measureTimeMillis
 
+@Suppress("unused")
 object MultiplyMatrices : IDemo {
     override val title = "multiply matrices"
 
@@ -28,8 +29,12 @@ object MultiplyMatrices : IDemo {
         }
     }
 
-    private infix fun Matrix.multiply(matrix2: Matrix): Matrix {
+    private infix fun Matrix.multiply(
+        matrix2: Matrix,
+    ): Matrix {
         val matrix1 = this
-        return matrix1
+        return buildMatrix(size = matrix1.size) { row, column ->
+            TODO("multiply vectors")
+        }
     }
 }

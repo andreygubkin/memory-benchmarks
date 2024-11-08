@@ -32,3 +32,17 @@ internal fun buildRandomMatrix(
         }
     }
 }
+
+/**
+ * Построить матрицу
+ */
+internal fun buildMatrix(
+    size: Int,
+    calcElement: (row: Int, column: Int) -> Double,
+): Matrix {
+    return Array(size) { row ->
+        DoubleArray(size) { column ->
+            calcElement(row, column)
+        }
+    }
+}
