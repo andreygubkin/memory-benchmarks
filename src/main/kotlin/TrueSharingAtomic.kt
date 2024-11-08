@@ -4,11 +4,12 @@ import kotlinx.coroutines.withContext
 import java.util.concurrent.atomic.AtomicLong
 import kotlin.system.measureTimeMillis
 
+@Suppress("unused")
 object TrueSharingAtomic : IDemo {
     override val title = "true sharing atomic"
 
     override suspend fun execute() {
-        val array = buildArray(
+        val array = buildRandomArray(
             size = 1 shl 26, // 64 mb * Long = 512mb
         )
 

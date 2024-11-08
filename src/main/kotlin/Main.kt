@@ -1,9 +1,10 @@
 private fun getDemos(): List<IDemo> = listOf(
-    TrueSharing,
-    FalseSharing,
-    FalseSharingAtomic,
-    TrueSharingAtomic,
+    //TrueSharing,
+    //FalseSharing,
+    //FalseSharingAtomic,
+    //TrueSharingAtomic,
     MultiplyMatrices,
+    MultiplyMatricesWithTransposition,
 )
 
 suspend fun main() {

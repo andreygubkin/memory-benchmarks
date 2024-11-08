@@ -3,11 +3,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.system.measureTimeMillis
 
+@Suppress("unused")
 object FalseSharing : IDemo {
     override val title = "false sharing"
 
     override suspend fun execute() {
-        val array = buildArray(
+        val array = buildRandomArray(
             size = 1 shl 28, // 256 mb * Long = 2gb
         )
 

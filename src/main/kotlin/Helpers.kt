@@ -10,10 +10,25 @@ internal fun Any.sendToBlackHole() {
 /**
  * Построить массив случайных лонгов
  */
-internal fun buildArray(
-    @Suppress("SameParameterValue") size: Int,
+internal fun buildRandomArray(
+    size: Int,
 ): LongArray {
     return LongArray(size) {
         Random.nextLong(until = 1_000)
+    }
+}
+
+typealias Matrix = Array<DoubleArray>
+
+/**
+ * Построить матрицу случайных даблов
+ */
+internal fun buildRandomMatrix(
+    size: Int,
+): Matrix {
+    return Array(size) {
+        DoubleArray(size) {
+            Random.nextDouble()
+        }
     }
 }
