@@ -1,17 +1,14 @@
+private fun getDemos(): List<IDemo> = listOf(
+    TrueSharing,
+    FalseSharing,
+    FalseSharingAtomic,
+    TrueSharingAtomic,
+    MultiplyMatrices,
+)
+
 suspend fun main() {
-
-    /**
-     * План:
-     * - true/false sharing
-     * - data alignment
-     * - matrix transpose
-     */
-
-    listOf(
-        TrueSharing,
-        FalseSharing,
-        FalseSharingAtomic,
-    ).forEach {
-        it.run()
-    }
+    getDemos()
+        .forEach {
+            it.run()
+        }
 }

@@ -17,4 +17,3 @@ internal fun buildArray(
         Random.nextLong(until = 1_000)
     }
 }
-
