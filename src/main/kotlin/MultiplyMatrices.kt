@@ -20,13 +20,13 @@ object MultiplyMatrices : IDemo {
 
         println("ms")
         listOf(
-            100,
-            150,
-            200,
-            250,
-            300,
-            350,
-            400,
+            //100,
+            //150,
+            2000,
+            //250,
+            //300,
+            //350,
+            //400,
         ).forEach { matrixSize ->
             val ms = measureMatrixMultiplyMs(matrixSize)
             println(ms)
@@ -40,9 +40,7 @@ object MultiplyMatrices : IDemo {
         return buildMatrix(size = matrix1.size) { row, column ->
             var sum = 0.0
             for (i in 0 until size) {
-                for (j in 0 until size) {
-                    sum += matrix1[row][i] * matrix2[j][column]
-                }
+                sum += matrix1[row][i] * matrix2[i][column]
             }
             sum
         }
