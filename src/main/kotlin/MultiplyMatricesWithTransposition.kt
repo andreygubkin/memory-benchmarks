@@ -20,13 +20,15 @@ object MultiplyMatricesWithTransposition : IDemo {
 
         println("ms")
         listOf(
-            //100,
-            //150,
-            2000,
-            //250,
-            //300,
-            //350,
-            //400,
+            700,
+            800,
+            900,
+            1000,
+            1100,
+            1200,
+            1300,
+            1400,
+            1500,
         ).forEach { matrixSize ->
             val ms = measureMatrixMultiplyMs(matrixSize)
             println(ms)
